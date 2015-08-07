@@ -1,0 +1,19 @@
+<html>
+<head>
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css'>
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Contacts Entered</title>
+</head>
+<body>
+    <div class='container'>
+        <h1>Contacts Entered:</h1>
+      <ul>
+
+        <li>Contact Name:{{ newcontact.getName }}</li>
+        <li>Contact Phone number:{{ newcontact.getPhone }}</li>
+        <li>Contact Address:{{ newcontact.getAddress }}</li>
+      </ul>
+    <p>View your list of <a href='/'>contacts.</a></p>
+  </div>
+</body>
+</html>

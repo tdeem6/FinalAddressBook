@@ -1,4 +1,5 @@
 <?php
+//Contact object with three properties
     class Contact
     {
           private $name;
@@ -11,22 +12,16 @@
                 $this->phone = $phone;
                 $this->address = $address;
           }
-
-        
-
-          function setName($new_name)
-          {
-                $this->name = $name;
-          }
-
+//Setters and Getters for contact variables
           function getName()
           {
                 return $this->name;
           }
 
-          function setPhone($new_phone)
+
+          function setName($new_name)
           {
-                $this->phone = $phone;
+                $this->name = $name;
           }
 
           function getPhone()
@@ -34,9 +29,9 @@
                 return $this->phone;
           }
 
-          function setAddress($new_address)
+          function setPhone($new_phone)
           {
-                $this->address = $address;
+                $this->phone = $phone;
           }
 
           function getAddress()
@@ -44,19 +39,26 @@
                 return $this->address;
           }
 
-          static function getAll()
+          function setAddress($new_address)
           {
-              return $_SESSION['allcontacts'];
+                $this->address = $address;
           }
-
+// This is a method that saves the input from the user.
           function save ()
           {
-                array_push($_SESSION['allcontacts'], $this);
+                array_push($_SESSION['contact_list'], $this);
           }
 
+//This is a method that returns the contact information saved from the input.
+          static function getAll()
+          {
+              return $_SESSION['contact_list'];
+          }
+
+//method that deletes contacts.
           static function deleteAll()
           {
-                $_SESSION['allcontacts'] = array();
+                $_SESSION['contact_list'] = array();
           }
     }
     ?>

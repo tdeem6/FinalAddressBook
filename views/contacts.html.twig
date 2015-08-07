@@ -5,8 +5,10 @@
     <title>Contacts of Address Book</title>
 </head>
 <body>
-    <h1>Contacts stored:</h1>
-    {% if allcontacts is not empty %}
+    <div class='container'>
+        <h1>Contacts stored:</h1>
+
+        {% if contacts is not empty %}
         <p>Here are the contacts you've entered:</p>
         <ul>
             {% for contact in contacts %}
@@ -15,14 +17,15 @@
                 <li>Address: {{ contact.getAddress }}</li>
             {% endfor %}
         </ul>
-
+        {% else %}
+           <p>You have not entered anyone into your contact list!</p>
     {% endif %}
 
 
 
 
-<h1>Enter in your contact.</h1>
-        <form action='/contacts' method='post'>
+        <h1>Enter in your contact.</h1>
+        <form action='/create_contact' method='post'>
             <div class='form-group'>
                 <label for='name'>Contact name:</label>
                 <input id='name' name='name' class='form-control' type='text'>
@@ -40,7 +43,9 @@
       </br>
       </br>
       </br>
-      <form action='/contacts_deleted' method='post'>
+      <form action='/delete_contacts' method='post'>
           <button type='submit' class='btn-danger'>Delete your contacts!</button>
       </form>
   </div>
+</body>
+</html>
