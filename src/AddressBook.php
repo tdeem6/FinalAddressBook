@@ -46,19 +46,19 @@
 // This is a method that saves the input from the user.
           function save ()
           {
-                array_push($_SESSION['contact_list'], $this);
+                array_push($_SESSION['list_of_contacts'], $this);
           }
 
 //This is a method that returns the contact information saved from the input.
           static function getAll()
           {
-              return $_SESSION['contact_list'];
+              return $_SESSION['list_of_contacts'];
           }
 
 //method that deletes contacts.
           static function deleteAll()
           {
-                $_SESSION['contact_list'] = array();
+                $_SESSION['list_of_contacts'] = array();
           }
     }
     ?>
